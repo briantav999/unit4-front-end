@@ -1,0 +1,17 @@
+.filter {
+    height: 100%;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    background-color: white;
+}
+
+.carrot {
+    transform: rotate(90deg);
+}
