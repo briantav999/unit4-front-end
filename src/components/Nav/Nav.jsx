@@ -12,9 +12,6 @@ const Nav = () => {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/instruments">Instruments</Link>
-                </li>
-                <li>
                     <Link to="/create">Add Instrument</Link>
                 </li>
                 <li>
