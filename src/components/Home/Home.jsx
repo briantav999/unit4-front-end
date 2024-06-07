@@ -1,13 +1,15 @@
-function Home ({allInstruments, handleSelection}) {
-    return (<>
-        <Nav />
-      <h1>Our Home Page</h1>
-      <ul>
-          {allInstruments.map((instrument, i)=> (
-            <li key={i} onClick={()=>handleSelection(instrument)}>{instrument.name}</li>  
-          ))}
-      </ul>
-    
-    </>)}
+import Nav from './components/Nav/Nav.jsx'
+import InventoryCard from './components/InventoryCard/InventoryCard.jsx'
+import './App.css'
+
+
+
+function Home() {
+    return <>
+      <Nav />
+      <h1>Instrument Rental Management</h1>
+      <InventoryCard />
+    </>
+  }
   
-export default Home;
+  export default Home
