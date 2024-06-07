@@ -5,9 +5,11 @@ import './InventoryCard.css'
 
 const InventoryCard = () => {
     return <>
-        <SearchCard />
-        <FilterCard />
-        <ProductsCard />
+        <div id="inventory-card">
+            <SearchCard />
+            <FilterCard />
+            <ProductsCard />
+        </div>
     </>
 }
 
