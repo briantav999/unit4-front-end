@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Nav from './components/Nav/Nav.jsx'
-import InventoryCard from './components/InventoryCard/InventoryCard.jsx'
+import InventoryCard from './components/Home/InventoryCard/InventoryCard.jsx'
 import './App.css'
 
 function App() {
