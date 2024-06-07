@@ -2,13 +2,14 @@ import Product from './Product/Product.jsx'
 import './ProductsCard.css'
 
 const ProductsCard = () => {
-    const categories = ['ID', 'Brand', 'Model', 'Type', 'Rented']
+    const categories = ['ID', 'Brand', 'Model', 'Type', 'Condition', 'Rented']
     
     const tempProduct = {
         id: 1,
         brand: 'Yamaha',
         model: 'DRM742',
         type: 'Drum',
+        condition: 'Good',
         rented: true
     }
     const tempData = [tempProduct, tempProduct, tempProduct]
