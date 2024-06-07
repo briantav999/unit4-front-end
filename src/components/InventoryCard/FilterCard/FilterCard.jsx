@@ -1,3 +1,5 @@
+import './FilterCard.css'
+
 const FilterCard = () => {
     return <>
 
