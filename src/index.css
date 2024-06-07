@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-body {
+body, #root {
     display: flex;
     flex-direction: column;
     align-items: center;

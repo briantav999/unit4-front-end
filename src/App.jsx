@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   return <>
     <Nav />
-    <h1>Test</h1>
+    <h1>Instrument Rental Management</h1>
     <InventoryCard />
   </>
 }
