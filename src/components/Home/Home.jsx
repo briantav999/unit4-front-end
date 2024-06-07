@@ -1,5 +1,6 @@
 function Home ({allInstruments, handleSelection}) {
     return (<>
+        <Nav />
       <h1>Our Home Page</h1>
       <ul>
           {allInstruments.map((instrument, i)=> (
