@@ -1,6 +1,6 @@
 // src/components/services/instrumentService.js
 
-const API_URL = 'http://localhost:8000/api/instruments/'; // Update the URL based on your Django API endpoint
+const API_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`; // Update the URL based on your Django API endpoint
 
 const fetchInstruments = async () => {
     try {
