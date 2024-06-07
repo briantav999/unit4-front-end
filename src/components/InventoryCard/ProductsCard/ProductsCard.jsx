@@ -21,7 +21,7 @@ const ProductsCard = () => {
                 )}
             </div>
             {tempData.map( (product) =>
-                <Product key={product.id} product={product} />
+                <Product key={product.id} {...product} />
             )}
         </div>
     </>

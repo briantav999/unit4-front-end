@@ -1,13 +1,13 @@
 import './Product.css'
 
-const Product = () => {
+const Product = ({ id, brand, model, type, rented }) => {
     return <>
         <div className="products-row">
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+            <p>{id}</p>
+            <p>{brand}</p>
+            <p>{model}</p>
+            <p>{type}</p>
+            <p>{rented ? 'Yes' : 'No'}</p>
         </div>
     </>
 }
