@@ -1,18 +1,8 @@
 import Product from './Product/Product.jsx'
 import './ProductsCard.css'
 
-const ProductsCard = () => {
-    const categories = ['ID', 'Brand', 'Model', 'Type', 'Condition', 'Rented']
-    
-    const tempProduct = {
-        id: 1,
-        brand: 'Yamaha',
-        model: 'DRM742',
-        type: 'Drum',
-        condition: 'Good',
-        rented: true
-    }
-    const tempData = [tempProduct, tempProduct, tempProduct]
+const ProductsCard = ({ instruments }) => {
+    const categories = ['ID', 'Name', 'Category', 'Brand', 'Model', 'Condition', 'Rented']
     
     return <>
         <div id="products-card">
@@ -21,7 +11,7 @@ const ProductsCard = () => {
                     <p key={index}>{category}</p>
                 )}
             </div>
-            {tempData.map( (product) =>
+            {instruments.map( (product) =>
                 <Product key={product.id} {...product} />
             )}
         </div>

@@ -61,8 +61,6 @@ const deleteInstrument = async (id) => {
     }
 }
 
-console.log(await fetchInstruments())
-
 export {
     fetchInstruments,
     fetchInstrument,
