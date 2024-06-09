@@ -3,6 +3,7 @@ import './SearchCard.css'
 
 const SearchCard = () => {
     const [searchBar, setSearchBar] = useState('')
+    const [searchInstrument, setSearchInstrument] = useState([])
     
     // Func changes searchBar value as user types
     const handleSearchBar = (event) => {
@@ -10,8 +11,13 @@ const SearchCard = () => {
     }
 
     // Func pulls req from api and displays filtered data
-    const handleSearchButton = () => {
-        // TODO: Add in API fetching with search term
+    const handleSearchButton = async () => {
+        const URL = `http://localhost:5173/instruments/?search=${searchBar}`
+        const res = await fetch(URL);
+        console.log(URL);
+        const returnData = await res.json();
+        console.log(returnData);
+        setSearchInstrument(returnData);
     }
     
     return <>
