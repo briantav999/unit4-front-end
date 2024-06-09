@@ -52,8 +52,9 @@ const Create = () => {
     }
 
 return(
-    <div className="create">
-        <h2>Add Instrument</h2>
+    <fieldset>
+
+        <h2>Add Instrument</h2><br />
         <form onSubmit={(e) => {
             e.preventDefault()
             handleAddInstrument(Instrument)
@@ -77,9 +78,9 @@ return(
             <input type="checkbox" name="isRented" id="isRented" checked={Instrument.isRented} onChange={handleIsRented} />
 
             <button type="submit">Add Instrument</button>
-            <button id="home">Return to Home</button>
+            {/* <button id="home">Return to Home</button> */}
         </form>
-    </div>
+    </fieldset>
 )
 }
 
