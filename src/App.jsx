@@ -5,6 +5,7 @@ import './App.css'
 import Create from './components/AddInstruments/AddInstruments.jsx'
 
 function App() {
+  
   return <>
     <Nav />
     <h1>Instrument Rental Management</h1>
@@ -12,7 +13,6 @@ function App() {
     <Create />
   </>
 }
-
 
 
 export default App

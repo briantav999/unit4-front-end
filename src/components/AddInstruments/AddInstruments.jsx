@@ -1,6 +1,21 @@
 import { useState } from 'react'
 import './AddInstruments.css'
 
+const [Instrument, setInstrument] = useState([]);
+const [isCreateOpen, setIsCreateOpen] = useState(false);
+const [newInstrument, setNewInstrument] = useState([]);
+
+const handleAddInstrument = async (formData) => {
+    try{
+      const newInstrument = await createInstrument(formData);
+      setInstruments([...Instruments, NewInstrument]);
+      setIsCreateOpen(false);
+    }catch(error){
+      console.error(error);
+    }
+  }
+  
+
 const Create = ({handleAddInstrument}) => {
     const [Instrument, setInstrument] = useState({
         name: '',
