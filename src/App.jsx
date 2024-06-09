@@ -9,8 +9,8 @@ function App() {
   return <>
     <Nav />
     <h1>Instrument Rental Management</h1>
-    {/* <InventoryCard /> */}
-    <Create />
+    <InventoryCard />
+    {/* <Create /> */}
   </>
 }
 

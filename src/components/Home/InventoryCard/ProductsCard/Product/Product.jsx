@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import './Product.css'
 
 const Product = ({ id, name, category, brand, model, condition, rented }) => {
     return <>
         <div className="products-row">
-            <p>{id}</p>
+            <Link to={`/instruments/${id}`}>{id}</Link>
             <p>{name}</p>
             <p>{category}</p>
             <p>{brand}</p>
