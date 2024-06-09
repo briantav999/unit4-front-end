@@ -26,7 +26,6 @@ const EditInstrument = () => {
     }, [])
 
     const handleInputChange = (event) => {
-        console.log(event);
         if (event.target.type === 'text') {
             setCurrentInstrument({
                 ...currentInstrument,
@@ -35,13 +34,23 @@ const EditInstrument = () => {
         } else if (event.target.type === 'checkbox') {
             setCurrentInstrument({
                 ...currentInstrument,
-                isRented: e.target.checked
+                isRented: event.target.checked
             })
         }
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+
+
+        let data = {...currentInstrument}
+        delete data.id
+
+        service.updateInstrument(data, id)
+    }
+
     return <>
-        <div id="edit-instrument">
+        <div id="edit-instrument" onSubmit={handleSubmit}>
             <form >
                 <fieldset aria-labelledby="instrumentLegend">
                     <legend id="instrumentLegend">Edit {currentInstrument.name}</legend>
