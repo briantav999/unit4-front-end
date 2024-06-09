@@ -15,11 +15,12 @@ const Create = () => {
             const newInstrument = await createInstrument(formData);
             setInstruments([...Instruments, newInstrument]);
             setIsCreateOpen(false);
-
         }catch(error){
             console.error(error);
         }
     }
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();

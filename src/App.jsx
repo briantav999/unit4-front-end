@@ -5,7 +5,19 @@ import './App.css'
 import Create from './components/AddInstruments/AddInstruments.jsx'
 import EditInstrument from './components/EditInstrument/EditInstrument.jsx'
 
+
+
+
 function App() {
+  const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [newInstrument, setNewInstrument] = useState([]);
+  
+  {isCreateOpen ? (
+    <Create 
+    id="create"
+    newInstrument = {newInstrument}
+    handleAddInstrument={handleAddInstrument} />
+  ) : null}
   
   return <>
     <Nav />
