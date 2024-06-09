@@ -13,7 +13,7 @@ const fetchInstruments = async () => {
 
 const fetchInstrument = async (id) => {
     try {
-        const res = await fetch(`${API_URL}/${id}/`);
+        const res = await fetch(`${API_URL}${id}`);
         const data = await res.json();
         return data;
     } catch (error) {
@@ -37,7 +37,7 @@ const createInstrument = async (formData) => {
 
 const updateInstrument = async (formData, id) => {
     try {
-        const res = await fetch(`${API_URL}/${id}/`, {
+        const res = await fetch(`${API_URL}${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
@@ -51,7 +51,7 @@ const updateInstrument = async (formData, id) => {
 
 const deleteInstrument = async (id) => {
     try {
-        const res = await fetch(`${API_URL}/${id}/`, {
+        const res = await fetch(`${API_URL}${id}`, {
             method: 'DELETE',
         });
         const data = await res.json();
