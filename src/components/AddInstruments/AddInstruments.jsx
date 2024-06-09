@@ -52,7 +52,7 @@ const Create = () => {
     }
 
 return(
-    <fieldset>
+    <fieldset id='addInstrument'>
 
         <h2>Add Instrument</h2><br />
         <form onSubmit={(e) => {
