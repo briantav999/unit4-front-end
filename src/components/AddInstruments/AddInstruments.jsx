@@ -15,11 +15,12 @@ const Create = () => {
             const newInstrument = await createInstrument(formData);
             setInstruments([...Instruments, newInstrument]);
             setIsCreateOpen(false);
-
         }catch(error){
             console.error(error);
         }
     }
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -52,7 +53,7 @@ const Create = () => {
     }
 
 return(
-    <fieldset>
+    <fieldset id='addInstrument'>
 
         <h2>Add Instrument</h2><br />
         <form onSubmit={(e) => {
