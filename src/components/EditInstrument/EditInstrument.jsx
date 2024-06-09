@@ -35,7 +35,7 @@ const EditInstrument = () => {
         } else if (event.target.type === 'checkbox') {
             setCurrentInstrument({
                 ...currentInstrument,
-                [event.target.id]: event.target.checked === 'checked' ? true : false
+                isRented: e.target.checked
             })
         }
     }
