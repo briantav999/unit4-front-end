@@ -4,14 +4,19 @@ import InventoryCard from './components/Home/InventoryCard/InventoryCard.jsx'
 import './App.css'
 import Create from './components/AddInstruments/AddInstruments.jsx'
 
-{isCreateOpen ? (
-  <Create 
-  id="create"
-  newInstrument = {newInstrument}
-  handleAddInstrument={handleAddInstrument} />
-) : null}
+
+
 
 function App() {
+  const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [newInstrument, setNewInstrument] = useState([]);
+  
+  {isCreateOpen ? (
+    <Create 
+    id="create"
+    newInstrument = {newInstrument}
+    handleAddInstrument={handleAddInstrument} />
+  ) : null}
   
   return <>
     <Nav />
