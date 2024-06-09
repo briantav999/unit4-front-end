@@ -6,7 +6,7 @@ import { createInstrument } from '../../services/instrumentService'
 
 const Create = () => {
     const [Instruments, setInstruments] = useState([]);
-    const [isCreateOpen, setIsCreateOpen] = useState(false);
+    
     const [newInstrument, setNewInstrument] = useState([]);
     
     const handleAddInstrument = async (formData) => {
@@ -15,6 +15,7 @@ const Create = () => {
             const newInstrument = await createInstrument(formData);
             setInstruments([...Instruments, newInstrument]);
             setIsCreateOpen(false);
+            console.log(newInstrument);
         }catch(error){
             console.error(error);
         }
