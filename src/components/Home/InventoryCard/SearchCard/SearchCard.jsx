@@ -1,22 +1,27 @@
-import { useState } from 'react'
-import './SearchCard.css'
+import { useState } from 'react';
+import './SearchCard.css';
 
-const SearchCard = (props) => {
-    const [searchBar, setSearchBar] = useState('')
-    
+const SearchCard = ({ onSearch }) => {
+    const [searchBar, setSearchBar] = useState('');
+
     // Func changes searchBar value as user types
     const handleSearchBar = (event) => {
-        setSearchBar(event.target.value)
-    }
+        const value = event.target.value;
+        setSearchBar(value);
+        onSearch(value); // Pass search value to parent component
+    };
 
-    return <>
+    return (
         <div id="search-card">
-            <input type="text" id='search-bar' 
-                placeholder='Search instruments'
+            <input 
+                type="text" 
+                id="search-bar" 
+                placeholder="Search instruments"
                 value={searchBar}
-                onChange={handleSearchBar} />
+                onChange={handleSearchBar} 
+            />
         </div>
-    </>
+    );
 }
 
-export default SearchCard
+export default SearchCard;
