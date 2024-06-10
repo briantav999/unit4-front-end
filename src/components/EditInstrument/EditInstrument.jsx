@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import { redirect, useNavigate, useParams } from 'react-router-dom'
 import * as service from '../../services/instrumentService.js'
 import './EditInstrument.css'
 
 const EditInstrument = () => {
-    const id = 1
+    const { productId } = useParams()
+    const navigate = useNavigate()
 
     const [currentInstrument, setCurrentInstrument] = useState({})
     
@@ -11,7 +13,7 @@ const EditInstrument = () => {
     useEffect(() => {
         const fetchCurrent = async () => {
             try {
-                const current = await service.fetchInstrument(id)
+                const current = await service.fetchInstrument(productId)
                 if (current.error) {
                     throw new Error(current.error)
                 } else {
@@ -46,14 +48,15 @@ const EditInstrument = () => {
         let data = {...currentInstrument}
         delete data.id
 
-        service.updateInstrument(data, id)
+        service.updateInstrument(data, productId)
+        navigate('/')
     }
 
     return <>
         <div id="edit-instrument" onSubmit={handleSubmit}>
             <form >
                 <fieldset aria-labelledby="instrumentLegend">
-                    <legend id="instrumentLegend">Edit {currentInstrument.name}</legend>
+                    <legend id="instrumentLegend">Edit Instrument #{productId}</legend>
                     <div>
                         <label htmlFor="name">Name:</label>
                         <input type="text" id="name" required
