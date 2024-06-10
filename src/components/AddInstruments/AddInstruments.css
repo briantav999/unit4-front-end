@@ -1,7 +1,7 @@
+/* Addinstruments.css */
 #addInstrument {
     width: 100%;
-    height: 40px;
-    padding: 5px;
+    padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -16,12 +16,69 @@
 }
 
 #createForm {
-    width: 15%;
-    height: 40px;
-    padding: 5px;
+    width: 50%;
+    padding: 20px;
     align-self: center;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    border-color: black;
+    gap: 15px;
+    border: 2px solid #555;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+#createForm input[type="text"],
+#createForm input[type="checkbox"],
+#createForm button {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+#createForm input[type="text"]:focus,
+#createForm input[type="checkbox"]:focus,
+#createForm button:hover {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+#createForm button {
+    background-color: #444;
+    cursor: pointer;
+}
+
+#createForm button:hover {
+    background-color: #555;
+}
+
+#createForm label {
+    font-size: 1.2em;
+    color: #aaa;
+}
+
+body {
+    cursor: url('cursor.png'), auto;
+}
+
+/* Cursor tracer effect */
+body {
+    overflow: hidden;
+}
+
+.tracer {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    background: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transition: transform 0.15s ease;
 }
