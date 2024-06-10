@@ -103,14 +103,16 @@ const Create = () => {
                     onChange={handleChange}
                 />
 
-                <label htmlFor="isRented">Is this rented out?</label>
-                <input
-                    type="checkbox"
-                    name="isRented"
-                    id="isRented"
-                    checked={newInstrument.isRented}
-                    onChange={handleIsRented}
-                />
+                <div id='isRented-container'>
+                    <label htmlFor="isRented">Is this rented out?</label>
+                    <input
+                        type="checkbox"
+                        name="isRented"
+                        id="isRented"
+                        checked={newInstrument.isRented}
+                        onChange={handleIsRented}
+                    />
+                </div>
 
                 <button type="submit">Add Instrument</button>
             </form>

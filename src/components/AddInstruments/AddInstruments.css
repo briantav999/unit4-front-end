@@ -28,8 +28,15 @@
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
+#isRented-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #createForm input[type="text"],
-#createForm input[type="checkbox"],
+#isRented-container > input[type="checkbox"],
 #createForm button {
     padding: 10px;
     margin: 5px 0;
@@ -40,6 +47,10 @@
     outline: none;
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+#isRented {
+    width: min-content;
 }
 
 #createForm input[type="text"]:focus,
