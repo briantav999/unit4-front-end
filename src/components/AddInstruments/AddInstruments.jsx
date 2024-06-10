@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AddInstruments.css';
 import { createInstrument } from '../../services/instrumentService';
 
@@ -12,6 +13,8 @@ const Create = () => {
         condition: '',
         isRented: false
     });
+
+    const navigate = useNavigate()
 
     const handleAddInstrument = async (formData) => {
         try {
@@ -47,6 +50,9 @@ const Create = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         handleAddInstrument(newInstrument);
+
+        navigate('/')
+        window.location.reload()
     };
 
     return (
