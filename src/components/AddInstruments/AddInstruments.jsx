@@ -14,7 +14,6 @@ const Create = () => {
             // console.log(formData)
             const newInstrument = await createInstrument(formData);
             setInstruments([...Instruments, newInstrument]);
-            setIsCreateOpen(false);
             console.log(newInstrument);
         }catch(error){
             console.error(error);
