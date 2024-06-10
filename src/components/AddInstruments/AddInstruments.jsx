@@ -28,6 +28,9 @@ const Create = () => {
                 condition: '',
                 isRented: false
             });
+
+            navigate('/')
+            window.location.reload()
         } catch (error) {
             console.error(error);
         }
@@ -50,9 +53,6 @@ const Create = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         handleAddInstrument(newInstrument);
-
-        navigate('/')
-        window.location.reload()
     };
 
     return (
