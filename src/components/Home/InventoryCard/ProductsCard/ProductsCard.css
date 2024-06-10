@@ -42,3 +42,8 @@
         border-right: 0;
     }
 }
+
+.products-row > a {
+    color: black;
+    text-decoration: none;
+}
