@@ -13,12 +13,12 @@ const Nav = () => {
                 <li>
                     <Link to="/create">Add Instrument</Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to="/profile">Profile</Link>
                 </li>
                 <li>
                     <Link to="/login">Login</Link>
-                </li>
+                </li> */}
                 
             </ul>
         </nav>
