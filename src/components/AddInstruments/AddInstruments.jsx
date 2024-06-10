@@ -5,13 +5,11 @@ import { createInstrument } from '../../services/instrumentService'
 
 const Create = () => {
     const [Instruments, setInstruments] = useState([]);
-    const [newInstrument, setNewInstrument] = useState([]);
 
     const navigate = useNavigate();
     
     const handleAddInstrument = async (formData) => {
         try{
-            // console.log(formData)
             const newInstrument = await createInstrument(formData);
             setInstruments([...Instruments, newInstrument]);
             
