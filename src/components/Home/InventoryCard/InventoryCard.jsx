@@ -1,38 +1,49 @@
-import { useEffect, useState } from "react"
-import SearchCard from "./SearchCard/SearchCard.jsx"
-import FilterCard from "./FilterCard/FilterCard.jsx"
-import ProductsCard from "./ProductsCard/ProductsCard.jsx"
-import * as service from '../../../services/instrumentService.js'
-import './InventoryCard.css'
+import React, { useEffect, useState } from "react";
+import SearchCard from "./SearchCard/SearchCard.jsx";
+import FilterCard from "./FilterCard/FilterCard.jsx";
+import ProductsCard from "./ProductsCard/ProductsCard.jsx";
+import * as service from '../../../services/instrumentService';
+import './InventoryCard.css';
 
 const InventoryCard = () => {
-    const [displayedInstruments, setDisplayedInstruments] = useState([])
+    const [instruments, setInstruments] = useState([]);
+    const [displayedInstruments, setDisplayedInstruments] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
-    // On page load, fetches data from API and sets displayedInstruments to "all"
     useEffect(() => {
         const fetchAllInstruments = async () => {
             try {
-                const allInstruments = await service.fetchInstruments()
-                if (allInstruments.error) {
-                    throw new Error(allInstruments.error)
-                } else {
-                    setDisplayedInstruments(allInstruments)
+                const allInstruments = await service.fetchInstruments();
+                if (allInstruments) {
+                    setInstruments(allInstruments);
+                    setDisplayedInstruments(allInstruments);
                 }
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
         };
-    
+
         fetchAllInstruments();
     }, []);
-    
-    return <>
+
+    useEffect(() => {
+        const filteredInstruments = instruments.filter(instrument =>
+            instrument.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            instrument.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            instrument.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            instrument.model.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            instrument.condition.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setDisplayedInstruments(filteredInstruments);
+    }, [searchQuery, instruments]);
+
+    return (
         <div id="inventory-card">
-            <SearchCard />
+            <SearchCard onSearch={setSearchQuery} />
             <FilterCard />
             <ProductsCard instruments={displayedInstruments} />
         </div>
-    </>
-}
+    );
+};
 
-export default InventoryCard
+export default InventoryCard;

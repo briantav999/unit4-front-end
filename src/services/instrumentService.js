@@ -4,12 +4,15 @@ const API_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`; // Update the URL
 const fetchInstruments = async () => {
     try {
         const res = await fetch(API_URL);
+        if (!res.ok) {
+            throw new Error("Network response was not ok");
+        }
         const data = await res.json();
         return data;
     } catch (error) {
-        console.error(error);
+        console.error("Failed to fetch instruments:", error);
     }
-}
+};
 
 const fetchInstrument = async (id) => {
     try {

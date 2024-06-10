@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import './SearchCard.css'
+import { useState } from 'react';
+import './SearchCard.css';
 
-const SearchCard = () => {
-    const [searchBar, setSearchBar] = useState('')
-    const [searchInstrument, setSearchInstrument] = useState([])
-    
+const SearchCard = ({ onSearch }) => {
+    const [searchBar, setSearchBar] = useState('');
+
     // Func changes searchBar value as user types
     const handleSearchBar = (event) => {
-        setSearchBar(event.target.value)
-    }
+        const value = event.target.value;
+        setSearchBar(value);
+        onSearch(value); // Pass search value to parent component
+    };
 
-    // Func pulls req from api and displays filtered data
-    const handleSearchButton = async () => {
-        const URL = `http://localhost:5173/instruments/?search=${searchBar}`
-        const res = await fetch(URL);
-        console.log(URL);
-        const returnData = await res.json();
-        console.log(returnData);
-        setSearchInstrument(returnData);
-    }
-    
-    return <>
+    return (
         <div id="search-card">
-            <input type="text" id='search-bar' 
-                placeholder='Search instruments'
+            <input 
+                type="text" 
+                id="search-bar" 
+                placeholder="Search instruments"
                 value={searchBar}
-                onChange={handleSearchBar} />
-            <input type="button" id='search-button'
-                value="Search" onClick={handleSearchButton} />
+                onChange={handleSearchBar} 
+            />
         </div>
-    </>
+    );
 }
 
-export default SearchCard
+export default SearchCard;
