@@ -53,6 +53,13 @@ const EditInstrument = () => {
         navigate('/')
         window.location.reload()
     }
+        
+    const handleDelete = async () => {
+        await service.deleteInstrument(productId)
+    
+        navigate('/')
+        window.location.reload()
+    }
 
     return <>
         <div id="edit-instrument" onSubmit={handleSubmit}>
@@ -96,6 +103,7 @@ const EditInstrument = () => {
                 </div>
                 <button type="submit">Update Instrument</button>
             </form>
+            <button id='delete-instrument' onClick={handleDelete}>Delete Instrument</button>
         </div>
     </>
 }
