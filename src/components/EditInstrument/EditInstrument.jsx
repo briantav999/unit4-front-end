@@ -49,7 +49,9 @@ const EditInstrument = () => {
         delete data.id
 
         service.updateInstrument(data, productId)
+        
         navigate('/')
+        window.location.reload()
     }
 
     return <>
