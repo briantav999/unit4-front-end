@@ -1,17 +1,22 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './AddInstruments.css'
 import { createInstrument } from '../../services/instrumentService'
 
 const Create = () => {
     const [Instruments, setInstruments] = useState([]);
     const [newInstrument, setNewInstrument] = useState([]);
+
+    const navigate = useNavigate();
     
     const handleAddInstrument = async (formData) => {
         try{
             // console.log(formData)
             const newInstrument = await createInstrument(formData);
             setInstruments([...Instruments, newInstrument]);
-            console.log(newInstrument);
+            
+            navigate('/');
+            window.location.reload();
         }catch(error){
             console.error(error);
         }
