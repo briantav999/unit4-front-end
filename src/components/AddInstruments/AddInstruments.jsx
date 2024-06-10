@@ -2,11 +2,8 @@ import { useState } from 'react'
 import './AddInstruments.css'
 import { createInstrument } from '../../services/instrumentService'
 
-
-
 const Create = () => {
     const [Instruments, setInstruments] = useState([]);
-    
     const [newInstrument, setNewInstrument] = useState([]);
     
     const handleAddInstrument = async (formData) => {
@@ -19,14 +16,6 @@ const Create = () => {
             console.error(error);
         }
     }
-
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        handleAddInstrument(newInstrument);
-    }
-  
    
     const [Instrument, setInstrument] = useState({
         name: '',
