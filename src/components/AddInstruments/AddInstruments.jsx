@@ -103,7 +103,7 @@ const Create = () => {
                     onChange={handleChange}
                 />
 
-                <label htmlFor="isRented">Is Rented:</label>
+                <label htmlFor="isRented">Is this rented out?:</label>
                 <input
                     type="checkbox"
                     name="isRented"
