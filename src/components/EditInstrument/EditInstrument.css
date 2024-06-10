@@ -43,3 +43,12 @@
         width: 100%;
     }
 }
+
+#delete-instrument {
+    background-color: red;
+    color: white;
+    width: 185px;
+    border-radius: 5px;
+    padding: 4px 0;
+    cursor: pointer;
+}
