@@ -8,10 +8,8 @@ const Create = () => {
     
     const handleAddInstrument = async (formData) => {
         try{
-            // console.log(formData)
             const newInstrument = await createInstrument(formData);
             setInstruments([...Instruments, newInstrument]);
-            console.log(newInstrument);
         }catch(error){
             console.error(error);
         }
