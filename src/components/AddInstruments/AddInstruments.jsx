@@ -57,7 +57,7 @@ return(
     <fieldset id='addInstrument'>
 
         <h2>Add Instrument</h2><br />
-        <form onSubmit={(e) => {
+        <form id="createForm" onSubmit={(e) => {
             e.preventDefault()
             handleAddInstrument(Instrument)
         }}>
@@ -76,7 +76,7 @@ return(
             <label htmlFor="condition">Condition:</label>
             <input type="text" name="condition" id="condition" maxLength="32" value={Instrument.condition} onChange={handleChange} />
 
-            <label htmlFor="isRented">isRented:</label>
+            <label htmlFor="isRented">Is this rented?:</label>
             <input type="checkbox" name="isRented" id="isRented" checked={Instrument.isRented} onChange={handleIsRented} />
 
             <button type="submit">Add Instrument</button>
