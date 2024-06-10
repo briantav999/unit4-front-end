@@ -13,7 +13,7 @@
     text-align: center;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    background-color: darksalmon;
+    background-color: lightblue;
 
     > * {
         border-radius: 8px;

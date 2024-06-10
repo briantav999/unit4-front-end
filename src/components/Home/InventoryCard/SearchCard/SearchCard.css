@@ -7,7 +7,7 @@
     flex-direction: row;
     gap: 5px;
 
-    background-color: darksalmon;
+    background-color: lightblue;
 
     > * {
         border-radius: 8px;
