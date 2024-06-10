@@ -56,47 +56,45 @@ const EditInstrument = () => {
 
     return <>
         <div id="edit-instrument" onSubmit={handleSubmit}>
-            <form >
-                <fieldset aria-labelledby="instrumentLegend">
-                    <legend id="instrumentLegend">Edit Instrument #{productId}</legend>
-                    <div>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" required
-                            value={currentInstrument.name}
-                            onChange={handleInputChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="category">Category:</label>
-                        <input type="text" id="category" required
-                            value={currentInstrument.category}
-                            onChange={handleInputChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="brand">Brand:</label>
-                        <input type="text" id="brand" required
-                            value={currentInstrument.brand}
-                            onChange={handleInputChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="model">Model:</label>
-                        <input type="text" id="model" required
-                            value={currentInstrument.model}
-                            onChange={handleInputChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="condition">Condition:</label>
-                        <input type="text" id="condition" required
-                            value={currentInstrument.condition}
-                            onChange={handleInputChange} />
-                    </div>
-                    <div>
-                        <label htmlFor="isRented">Rented:</label>
-                        <input type="checkbox" id="isRented"
-                            checked={currentInstrument.isRented ? 'checked' : null}
-                            onChange={handleInputChange} />
-                    </div>
-                </fieldset>
-                <button type="submit">Submit</button>
+            <h2>Edit Instrument #{productId}</h2>
+            <form id='edit-form'>
+                <div>
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" required
+                        value={currentInstrument.name}
+                        onChange={handleInputChange} />
+                </div>
+                <div>
+                    <label htmlFor="category">Category:</label>
+                    <input type="text" id="category" required
+                        value={currentInstrument.category}
+                        onChange={handleInputChange} />
+                </div>
+                <div>
+                    <label htmlFor="brand">Brand:</label>
+                    <input type="text" id="brand" required
+                        value={currentInstrument.brand}
+                        onChange={handleInputChange} />
+                </div>
+                <div>
+                    <label htmlFor="model">Model:</label>
+                    <input type="text" id="model" required
+                        value={currentInstrument.model}
+                        onChange={handleInputChange} />
+                </div>
+                <div>
+                    <label htmlFor="condition">Condition:</label>
+                    <input type="text" id="condition" required
+                        value={currentInstrument.condition}
+                        onChange={handleInputChange} />
+                </div>
+                <div>
+                    <label htmlFor="isRented">Is this rented?</label>
+                    <input type="checkbox" id="isRented"
+                        checked={currentInstrument.isRented ? 'checked' : null}
+                        onChange={handleInputChange} />
+                </div>
+                <button type="submit">Update Instrument</button>
             </form>
         </div>
     </>
