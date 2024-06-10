@@ -40,7 +40,7 @@ const InventoryCard = () => {
     return (
         <div id="inventory-card">
             <SearchCard onSearch={setSearchQuery} />
-            {/* <FilterCard /> */}
+            <FilterCard  setDisplayedInstruments={setDisplayedInstruments}/>
             <ProductsCard instruments={displayedInstruments} />
         </div>
     );

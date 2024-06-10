@@ -24,6 +24,22 @@ const fetchInstrument = async (id) => {
     }
 }
 
+const fetchCategories = async () => {
+    try {
+        const res = await fetch(API_URL);
+        if (!res.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data = await res.json();
+        const categories = data.map(instrument => instrument.category);
+        const uniqueCategories = [...new Set(categories)];
+        return uniqueCategories;
+    } catch (error) {
+        console.error("Failed to fetch categories:", error);
+        throw error;
+    }
+};
+
 const createInstrument = async (formData) => {
     try {
         const res = await fetch(API_URL, {
@@ -70,4 +86,6 @@ export {
     createInstrument,
     updateInstrument,
     deleteInstrument,
+    fetchCategories
+
 };
