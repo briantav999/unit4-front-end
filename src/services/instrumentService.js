@@ -40,6 +40,57 @@ const fetchCategories = async () => {
     }
 };
 
+const fetchModels = async () => {
+    try {
+        const res = await fetch(API_URL);
+        if (!res.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data = await res.json();
+        const models = data.map(instrument => instrument.model);
+        const uniqueModels = [...new Set(models)];
+        return uniqueModels;
+    } catch (error) {
+        console.error("Failed to fetch models:", error);
+        throw error;
+    }
+};
+
+const fetchBrand = async () => {
+    try {
+        const res = await fetch(API_URL);
+        if (!res.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data = await res.json();
+        const brands = data.map(instrument => instrument.brand);
+        const uniqueBrands = [...new Set(brands)];
+        return uniqueBrands;
+    } catch (error) {
+        console.error("Failed to fetch brand:", error);
+        throw error;
+    }
+};
+
+const fetchIsRented = async () => {
+    try {
+        const res = await fetch(API_URL);
+        if (!res.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data = await res.json();
+        const isRentedValues = data.map(instrument => instrument.isRented);
+        // Filter out unique boolean values
+        const uniqueIsRentedValues = [...new Set(isRentedValues)];
+        return uniqueIsRentedValues;
+    } catch (error) {
+        console.error("Failed to fetch isRented values:", error);
+        throw error;
+    }
+};
+
+
+
 const createInstrument = async (formData) => {
     try {
         const res = await fetch(API_URL, {
@@ -86,6 +137,9 @@ export {
     createInstrument,
     updateInstrument,
     deleteInstrument,
-    fetchCategories
+    fetchCategories,
+    fetchModels,
+    fetchBrand,
+    fetchIsRented
 
 };
