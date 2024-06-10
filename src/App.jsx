@@ -1,32 +1,22 @@
-import { useState } from 'react'
-import Nav from './components/Nav/Nav.jsx'
-import InventoryCard from './components/Home/InventoryCard/InventoryCard.jsx'
-import './App.css'
-import Create from './components/AddInstruments/AddInstruments.jsx'
-import EditInstrument from './components/EditInstrument/EditInstrument.jsx'
-
-
-
+import { React, useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
+import Nav from './components/Nav/Nav.jsx';
+import InventoryCard from './components/Home/InventoryCard/InventoryCard.jsx';
+import Create from './components/AddInstruments/AddInstruments.jsx';
+import './App.css';
 
 function App() {
-  const [isCreateOpen, setIsCreateOpen] = useState(false);
-  const [newInstrument, setNewInstrument] = useState([]);
-  
-  {isCreateOpen ? (
-    <Create 
-    id="create"
-    newInstrument = {newInstrument}
-    handleAddInstrument={handleAddInstrument} />
-  ) : null}
-  
-  return <>
-    <Nav />
-    <h1>Instrument Rental Management</h1>
-    {/* <InventoryCard /> */}
-    {/* <Create /> */}
-    <EditInstrument />
-  </>
+  return (
+    <>
+      <Nav />
+      <h1>Instrument Rental Management</h1>
+      <Routes>
+        <Route path="/" element={<InventoryCard />} />
+        <Route path="/create" element={<Create />} />
+        {/* Add more routes as needed */}
+      </Routes>
+    </>
+  );
 }
 
-
-export default App
+export default App;
