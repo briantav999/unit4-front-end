@@ -1,7 +1,8 @@
 #filter-card {
-    width: 100%;
+    width: calc(100% - 20px);
     height: 30px;
     padding: 5px;
+    margin-top: 5px;
 
     display: flex;
     flex-direction: row;
